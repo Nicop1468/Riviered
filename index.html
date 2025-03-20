@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte de Visite - Riviere Dominique</title>
+    <title>Carte de Visite - Dominique Riviere</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
             --bg-color: #000;
@@ -64,11 +65,17 @@
             margin: 12px auto;
             border-radius: 8px;
             cursor: pointer;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             text-decoration: none;
             font-weight: bold;
             width: 80%;
             transition: background 0.3s, transform 0.2s;
+        }
+        .button i {
+            font-size: 18px;
         }
         .button:hover {
             background: #e6c300;
@@ -91,14 +98,22 @@
 </head>
 <body>
     <div class="card">
-        <div class="profile-placeholder">RD</div>
+        <div class="profile-placeholder">DR</div>
         <h2>Riviere Dominique</h2>
-        <h3>Gérant - Klima Riv'Air</h3>
-        <a class="button" href="tel:0**********">📞 0* ** ** ** **</a>
-        <a class="button" href="mailto:dominique.riviere@klima-rivair.fr">✉️ dominique.riviere@klima-rivair.fr</a>
-        <a class="button" href="https://klima-rivair.fr" target="_blank">🌐 Site Web</a>
+        <h3>Gerant - Klima Riv'Air</h3>
+        <a class="button" href="tel:0562226743">
+            <i class="fa-solid fa-phone"></i> 05 62 22 67 43
+        </a>
+        <a class="button" href="mailto:dominique.riviere@klima-rivair.fr">
+            <i class="fa-solid fa-envelope"></i> dominique.riviere@klima-rivair.fr
+        </a>
+        <a class="button" href="https://klima-rivair.fr" target="_blank">
+            <i class="fa-solid fa-globe"></i> www.klima-rivair.fr
+        </a>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.2220591329933!2d1.4128476763032418!3d43.67237925294717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aea5f1e5a6b7d9%3A0x358761d0568f6c13!2s62%20Imp.%20de%20Lespinasse%2C%2031140%20Aucamville%2C%20France!5e0!3m2!1sfr!2sfr!4v1710880000000!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
-        <a class="button" id="saveContact" href="#">💾 Enregistrer le contact</a>
+        <a class="button" id="saveContact" href="#">
+            <i class="fa-solid fa-download"></i> Enregistrer le contact
+        </a>
     </div>
     <script>
         document.getElementById("saveContact").addEventListener("click", function() {
@@ -109,7 +124,7 @@
                     reader.readAsDataURL(blob);
                     reader.onloadend = function () {
                         const base64Data = reader.result.split(",")[1];
-                        const vCardData = `BEGIN:VCARD\nVERSION:3.0\nN:Riviere;Dominique\nFN:Dominique Riviere\nORG:Klima Riv'Air\nTITLE:Gérant\nTEL;TYPE=cell:0**********\nEMAIL:dominique.riviere@klima-rivair.fr\nURL:https://klima-rivair.fr\nADR;TYPE=work:;;62 impasse de lespinasse;31140;Aucamville\nPHOTO;ENCODING=b;TYPE=JPEG:${base64Data}\nEND:VCARD`;
+                        const vCardData = `BEGIN:VCARD\nVERSION:3.0\nN:Riviere;Dominique\nFN:Dominique Riviere\nORG:Klima Riv'Air\nTITLE:Gerant\nTEL;TYPE=cell:0562226743\nEMAIL:dominique.riviere@klima-rivair.fr\nURL:https://klima-rivair.fr\nADR;TYPE=work:;;62 impasse de lespinasse;31140;Aucamville\nPHOTO;ENCODING=b;TYPE=JPEG:${base64Data}\nEND:VCARD`;
                         const vCardEncoded = encodeURIComponent(vCardData);
                         const vCardBlob = `data:text/vcard;charset=utf-8,${vCardEncoded}`;
                         const link = document.createElement("a");
