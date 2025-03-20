@@ -101,8 +101,8 @@
         <div class="profile-placeholder">DR</div>
         <h2>Riviere Dominique</h2>
         <h3>Gerant - Klima Riv'Air</h3>
-        <a class="button" href="tel:0562226743">
-            <i class="fa-solid fa-phone"></i> 05 62 22 67 43
+        <a class="button" href="tel:0628021178">
+            <i class="fa-solid fa-phone"></i> 06 28 02 11 78
         </a>
         <a class="button" href="mailto:dominique.riviere@klima-rivair.fr">
             <i class="fa-solid fa-envelope"></i> dominique.riviere@klima-rivair.fr
@@ -124,7 +124,7 @@
                     reader.readAsDataURL(blob);
                     reader.onloadend = function () {
                         const base64Data = reader.result.split(",")[1];
-                        const vCardData = `BEGIN:VCARD\nVERSION:3.0\nN:Riviere;Dominique\nFN:Dominique Riviere\nORG:Klima Riv'Air\nTITLE:Gerant\nTEL;TYPE=cell:0562226743\nEMAIL:dominique.riviere@klima-rivair.fr\nURL:https://klima-rivair.fr\nADR;TYPE=work:;;62 impasse de lespinasse;31140;Aucamville\nPHOTO;ENCODING=b;TYPE=JPEG:${base64Data}\nEND:VCARD`;
+                        const vCardData = `BEGIN:VCARD\nVERSION:3.0\nN:Riviere;Dominique\nFN:Dominique Riviere\nORG:Klima Riv'Air\nTITLE:Gerant\nTEL;TYPE=cell:0628021178\nEMAIL:dominique.riviere@klima-rivair.fr\nURL:https://klima-rivair.fr\nADR;TYPE=work:;;62 impasse de lespinasse;31140;Aucamville\nPHOTO;ENCODING=b;TYPE=JPEG:${base64Data}\nEND:VCARD`;
                         const vCardEncoded = encodeURIComponent(vCardData);
                         const vCardBlob = `data:text/vcard;charset=utf-8,${vCardEncoded}`;
                         const link = document.createElement("a");
